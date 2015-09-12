@@ -1,0 +1,133 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "CSS Schema",
+  "definitions": {
+    "length": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "integer",
+          "default": "2"
+        },
+        "unit": {
+          "type": "string",
+          "enum": [
+            "px",
+            "em",
+            "%"
+          ],
+          "default": "px"
+        }
+      }
+    }
+  },
+  "type": "object",
+  "properties": {
+    "display": {
+      "type": "string",
+      "enum": [
+        "inline",
+        "table-row-group",
+        "table-row",
+        "table-header-group",
+        "table-footer-group",
+        "table-column-group",
+        "table-column",
+        "table-cell",
+        "table-caption",
+        "table",
+        "run-in",
+        "none",
+        "list-item",
+        "inline-table",
+        "inline-flex",
+        "inline-block",
+        "flex",
+        "compact",
+        "block"
+      ]
+    },
+    "position": {
+      "type": "string",
+      "enum": [
+        "static",
+        "sticky  ",
+        "relative",
+        "page",
+        "fixed",
+        "center",
+        "absolute"
+      ]
+    },
+    "color": {
+      "type": "string",
+      "format": "color",
+      "title": "color",
+      "default": "#ffa500"
+    },
+    "background-Color": {
+      "type": "string",
+      "format": "color",
+      "title": "background-Color",
+      "default": "#ffa500"
+    },
+    "font-family": {
+      "type": "string",
+      "title": "font-family"
+    },
+    "overflow": {
+      "type": "string",
+      "enum": [
+        "visible",
+        "scroll",
+        "hidden",
+        "auto"
+      ]
+    },
+    "float": {
+      "type": "string",
+      "enum": [
+        "none",
+        "right",
+        "left"
+      ]
+    },
+    "clear": {
+      "type": "string",
+      "enum": [
+        "none",
+        "right",
+        "left",
+        "both"
+      ]
+    },
+    "margin-left": {
+      "$ref": "#/definitions/length"
+    },
+    "margin-right": {
+      "$ref": "#/definitions/length"
+    },
+    "margin-top": {
+      "$ref": "#/definitions/length"
+    },
+    "margin-bottom": {
+      "$ref": "#/definitions/length"
+    },
+    "padding-right": {
+      "$ref": "#/definitions/length"
+    },
+    "padding-left": {
+      "$ref": "#/definitions/length"
+    },
+    "padding-top": {
+      "$ref": "#/definitions/length"
+    },
+    "padding-bottom": {
+      "$ref": "#/definitions/length"
+    },
+    "border-radius": {
+      "$ref": "#/definitions/length"
+    }
+
+  }
+}
