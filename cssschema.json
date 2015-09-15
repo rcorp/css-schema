@@ -36,6 +36,21 @@
           "default": "s"
         }
       }
+    },
+    "overflow": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "string",
+          "enum": [
+            "visible",
+            "scroll",
+            "hidden",
+            "auto"
+          ],
+          "required": true
+        }
+      }
     }
   },
 
@@ -63,7 +78,8 @@
         "flex",
         "compact",
         "block"
-      ]
+      ],
+      "required": true
     },
     "position": {
       "type": "string",
@@ -75,7 +91,8 @@
         "fixed",
         "center",
         "absolute"
-      ]
+      ],
+      "required": true
     },
     "color": {
       "type": "string",
@@ -100,7 +117,8 @@
         "scroll",
         "hidden",
         "auto"
-      ]
+      ],
+      "required": true
     },
     "float": {
       "type": "string",
@@ -108,7 +126,8 @@
         "none",
         "right",
         "left"
-      ]
+      ],
+      "required": true
     },
     "clear": {
       "type": "string",
@@ -117,7 +136,8 @@
         "right",
         "left",
         "both"
-      ]
+      ],
+      "required": true
     },
     "all": {
       "type": "string",
@@ -125,7 +145,8 @@
         "initial",
         "unset",
         "inherit"
-      ]
+      ],
+      "required": true
     },
     "animation-direction": {
       "type": "string",
@@ -134,7 +155,8 @@
         "reverse",
         "alternate-reverse",
         "alternate"
-      ]
+      ],
+      "required": true
     },
     "animation-fill-mode": {
       "type": "string",
@@ -143,14 +165,16 @@
         "forwards",
         "both",
         "backwards"
-      ]
+      ],
+      "required": true
     },
     "animation-play-mode": {
       "type": "string",
       "enum": [
         "running",
         "paused"
-      ]
+      ],
+      "required": true
     },
     "visibility": {
       "type": "string",
@@ -158,14 +182,16 @@
         "visible",
         "hidden",
         "collapse"
-      ]
+      ],
+      "required": true
     },
     "backface-visibility": {
       "type": "string",
       "enum": [
         "visible",
         "hidden"
-      ]
+      ],
+      "required": true
     },
     "background-attachment": {
       "type": "string",
@@ -173,7 +199,8 @@
         "scroll",
         "local",
         "fixed"
-      ]
+      ],
+      "required": true
     },
     "background-clip": {
       "type": "string",
@@ -181,7 +208,8 @@
         "border-box",
         "padding-box",
         "content-box"
-      ]
+      ],
+      "required": true
     },
     "background-origin": {
       "type": "string",
@@ -189,7 +217,8 @@
         "padding-box",
         "content-box",
         "border-box"
-      ]
+      ],
+      "required": true
     },
     "background-repeat": {
       "type": "string",
@@ -201,14 +230,16 @@
         "repeat-x",
         "repeat no-repeat",
         "no-repeat"
-      ]
+      ],
+      "required": true
     },
     "border-collapse": {
       "type": "string",
       "enum": [
         "separate",
         "collapse"
-      ]
+      ],
+      "required": true
     },
     "border-image-repeat": {
       "type": "string",
@@ -217,14 +248,16 @@
         "space",
         "round",
         "repeat"
-      ]
+      ],
+      "required": true
     },
     "box-decoration-break": {
       "type": "string",
       "enum": [
         "slice",
         "clone"
-      ]
+      ],
+      "required": true
     },
     "box-sizing": {
       "type": "string",
@@ -232,7 +265,8 @@
         "content-box",
         "padding-box",
         "border-box"
-      ]
+      ],
+      "required": true
     },
     "break-before": {
       "type": "string",
@@ -246,7 +280,8 @@
         "avoid-column",
         "avoid",
         "always"
-      ]
+      ],
+      "required": true
     },
     "break-after": {
       "type": "string",
@@ -260,7 +295,8 @@
         "avoid-column",
         "avoid",
         "always"
-      ]
+      ],
+      "required": true
     },
     "break-inside": {
       "type": "string",
@@ -269,14 +305,16 @@
         "avoid-page",
         "avoid-column",
         "avoid"
-      ]
+      ],
+      "required": true
     },
     "caption-side": {
       "type": "string",
       "enum": [
         "top",
         "bottom"
-      ]
+      ],
+      "required": true
     },
     "clear": {
       "type": "string",
@@ -285,7 +323,8 @@
         "right",
         "left",
         "both"
-      ]
+      ],
+      "required": true
     },
     "clear-after": {
       "type": "string",
@@ -301,21 +340,27 @@
         "descendants",
         "bottom",
         "both"
-      ]
+      ],
+      "required": true
+
     },
     "column-fill": {
       "type": "string",
       "enum": [
         "balance",
         "auto"
-      ]
+      ],
+      "required": true
+
     },
     "column-span": {
       "type": "string",
       "enum": [
         "none",
         "all"
-      ]
+      ],
+      "required": true
+
     },
     "column-rule-style": {
       "type": "string",
@@ -330,14 +375,18 @@
         "double",
         "dotted",
         "dashed"
-      ]
+      ],
+      "required": true
+
     },
     "empty-cells": {
       "type": "string",
       "enum": [
         "show",
         "hide"
-      ]
+      ],
+      "required": true
+
     },
     "float": {
       "type": "string",
@@ -345,7 +394,9 @@
         "none",
         "right",
         "left"
-      ]
+      ],
+      "required": true
+
     },
     "flex-direction": {
       "type": "string",
@@ -354,7 +405,9 @@
         "row-reverse",
         "column-reverse",
         "column"
-      ]
+      ],
+      "required": true
+
     },
     "flex-wrap": {
       "type": "string",
@@ -362,7 +415,9 @@
         "nowrap",
         "wrap-reverse",
         "wrap"
-      ]
+      ],
+      "required": true
+
     },
     "justify-content": {
       "type": "string",
@@ -372,7 +427,9 @@
         "space-around",
         "flex-end",
         "center"
-      ]
+      ],
+      "required": true
+
     },
     "align-items": {
       "type": "string",
@@ -382,7 +439,9 @@
         "flex-end",
         "center",
         "baseline"
-      ]
+      ],
+      "required": true
+
     },
     "align-self": {
       "type": "string",
@@ -393,7 +452,9 @@
         "flex-end",
         "center",
         "baseline"
-      ]
+      ],
+      "required": true
+
     },
     "align-content": {
       "type": "string",
@@ -404,7 +465,9 @@
         "flex-start",
         "flex-end",
         "center"
-      ]
+      ],
+      "required": true
+
     },
     "font-stretch": {
       "type": "string",
@@ -418,7 +481,9 @@
         "extra-condensed",
         "expanded",
         "condensed"
-      ]
+      ],
+      "required": true
+
     },
     "font-synthesis": {
       "type": "string",
@@ -427,7 +492,9 @@
         "weight",
         "style",
         "none"
-      ]
+      ],
+      "required": true
+
     },
     "font-kerning": {
       "type": "string",
@@ -435,7 +502,9 @@
         "auto",
         "normal",
         "none"
-      ]
+      ],
+      "required": true
+
     },
 
     "font-variant": {
@@ -448,7 +517,9 @@
         "petite-caps",
         "all-small-caps",
         "all-petite-caps"
-      ]
+      ],
+      "required": true
+
     },
     "font-variant-caps": {
       "type": "string",
@@ -460,7 +531,9 @@
         "petite-caps",
         "all-small-caps",
         "all-petite-caps"
-      ]
+      ],
+      "required": true
+
     },
     "font-style": {
       "type": "string",
@@ -468,7 +541,8 @@
         "normal",
         "oblique",
         "italic"
-      ]
+      ],
+      "required": true
     },
     "font-weight": {
       "type": "string",
@@ -486,12 +560,336 @@
         "300",
         "200",
         "100"
-      ]
+      ],
+      "required": true
+    },
+    "hanging-punctuation": {
+      "type": "string",
+      "enum": [
+        "none",
+        "last force-end",
+        "last allow-end",
+        "last",
+        "force-end",
+        "first force-end",
+        "first allow-end",
+        "first",
+        "allow-end"
+      ],
+      "required": true
+    },
+    "hyphens": {
+      "type": "string",
+      "enum": [
+        "manual",
+        "none",
+        "auto"
+      ],
+      "required": true
+    },
+    "image-resolution": {
+      "type": "string",
+      "enum": [
+        "1dppx",
+        "from-image"
+      ],
+      "required": true
+    },
+    "line-break": {
+      "type": "string",
+      "enum": [
+        "auto",
+        "strict",
+        "normal",
+        "loose"
+      ],
+      "required": true
+    },
+    "list-style-position": {
+      "type": "string",
+      "enum": [
+        "outside",
+        "inside"
+      ],
+      "required": true
+    },
+    "list-style-type": {
+      "type": "string",
+      "enum": [
+        "disc",
+        "upper-roman",
+        "upper-latin",
+        "upper-alpha",
+        "square",
+        "none",
+        "lower-roman",
+        "lower-latin",
+        "lower-greek",
+        "lower-alpha",
+        "georgian",
+        "decimal-leading-zero",
+        "decimal",
+        "circle",
+        "armenian"
+      ],
+      "required": true
+    },
+    "object-fit": {
+      "type": "string",
+      "enum": [
+        "fill",
+        "scale-down",
+        "none",
+        "cover",
+        "contain"
+      ],
+      "required": true
+    },
+    "outline-style": {
+      "type": "string",
+      "enum": [
+        "none",
+        "solid",
+        "ridge",
+        "outset",
+        "inset",
+        "groove",
+        "double",
+        "dotted",
+        "dashed",
+        "auto"
+      ],
+      "required": true
     },
 
+    "overflow-wrap": {
+      "type": "string",
+      "enum": [
+        "normal",
+        "break-word"
+      ],
+      "required": true
+    },
+    "page-break-after": {
+      "type": "string",
+      "enum": [
+        "auto",
+        "right",
+        "left",
+        "avoid",
+        "always"
+      ],
+      "required": true
+    },
+    "page-break-before": {
+      "type": "string",
+      "enum": [
+        "auto",
+        "right",
+        "left",
+        "avoid",
+        "always"
+      ],
+      "required": true
+    },
+    "page-break-inside": {
+      "type": "string",
+      "enum": [
+        "auto",
+        "avoid"
+      ],
+      "required": true
+    },
+    "pointer-events": {
+      "type": "string",
+      "enum": [
+        "auto",
+        "none"
+      ],
+      "required": true
+    },
+    "resize": {
+      "type": "string",
+      "enum": [
+        "none",
+        "vertical",
+        "horizontal",
+        "alwbothays"
+      ],
+      "required": true
+    },
+    "table-layout": {
+      "type": "string",
+      "enum": [
+        "auto",
+        "fixed"
+      ],
+      "required": true
+    },
+    "text-align-last": {
+      "type": "string",
+      "enum": [
+        "auto",
+        "start",
+        "right",
+        "left",
+        "justify",
+        "end",
+        "center"
+      ],
+      "required": true
+    },
+    "text-decoration-line": {
+      "type": "string",
+      "enum": [
+        "none",
+        "underline",
+        "overline",
+        "line-through",
+        "blink"
+      ],
+      "required": true
+    },
+    "text-decoration-skip": {
+      "type": "string",
+      "enum": [
+        "none",
+        "spaces",
+        "objects",
+        "ink",
+        "edges",
+        "box-decoration"
+      ],
+      "required": true
+    },
+    "text-decoration-position": {
+      "type": "string",
+      "enum": [
+        "auto",
+        "under right",
+        "under left",
+        "under",
+        "right",
+        "left"
+      ],
+      "required": true
+    },
+    "text-decoration-style": {
+      "type": "string",
+      "enum": [
+        "solid",
+        "wavy",
+        "double",
+        "dotted",
+        "dashed"
+      ],
+      "required": true
+    },
+    "text-emphasis-position": {
+      "type": "string",
+      "enum": [
+        "over right",
+        "over left",
+        "below right",
+        "below left"
+      ],
+      "required": true
+    },
+    "text-justify": {
+      "type": "string",
+      "enum": [
+        "auto",
+        "none",
+        "inter-word",
+        "distribute"
+      ],
+      "required": true
+    },
+    "text-orientation": {
+      "type": "string",
+      "enum": [
+        "mixed",
+        "use-glyph-orientation",
+        "upright",
+        "sideways-right",
+        "sideways-left",
+        "sideways"
+      ],
+      "required": true
 
+    },
+    "transform-style": {
+      "type": "string",
+      "enum": [
+        "flat",
+        "preserve-3d"
+      ],
+      "required": true
 
+    },
+    "text-transform": {
+      "type": "string",
+      "enum": [
+        "none",
+        "uppercase",
+        "lowercase",
+        "full-width",
+        "capitalize"
+      ],
+      "required": true
 
+    },
+    "unicode-bidi": {
+      "type": "string",
+      "enum": [
+        "normal",
+        "embed",
+        "bidi-override"
+      ],
+      "required": true
+
+    },
+    "white-space": {
+      "type": "string",
+      "enum": [
+        "normal",
+        "pre-wrap",
+        "pre-line",
+        "pre",
+        "nowrap"
+      ],
+      "required": true
+
+    },
+    "word-break": {
+      "type": "string",
+      "enum": [
+        "normal",
+        "keep-all",
+        "break-all"
+      ],
+      "required": true
+
+    },
+    "word-wrap": {
+      "type": "string",
+      "enum": [
+        "normal",
+        "break-word"
+      ],
+      "required": true
+
+    },
+    "writing-mode": {
+      "type": "string",
+      "enum": [
+        "horizontal-tb",
+        "vertical-rl",
+        "vertical-lr"
+      ],
+      "required": true
+
+    },
     "margin-left": {
       "$ref": "#/definitions/length"
     },
@@ -521,6 +919,15 @@
     },
     "animation-duration": {
       "$ref": "#/definitions/time"
+    },
+    "overflow": {
+      "$ref": "#/definitions/overflow"
+    },
+    "overflow-x": {
+      "$ref": "#/definitions/overflow"
+    },
+    "overflow-y": {
+      "$ref": "#/definitions/overflow"
     }
 
   }
