@@ -1,0 +1,522 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "CSS Schema",
+  "definitions": {
+    "length": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "integer",
+          "default": "2"
+        },
+        "unit": {
+          "type": "string",
+          "enum": [
+            "px",
+            "em",
+            "%"
+          ],
+          "default": "px"
+        }
+      }
+    },
+    "time": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "integer",
+          "default": "2"
+        },
+        "unit": {
+          "type": "string",
+          "enum": [
+            "s",
+            "ms"
+          ],
+          "default": "s"
+        }
+      }
+    },
+    "border": {
+      "type": "object",
+      "properties": {
+        "unit": {
+          "type": "string",
+          "enum": [
+            "none",
+            "solid",
+            "ridge",
+            "outset",
+            "inset",
+            "hidden",
+            "groove",
+            "double",
+            "dotted",
+            "dashed"
+          ],
+          "default": "none"
+        }
+      }
+    },
+    "border-width": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "string",
+          "enum": [
+            "medium",
+            "thin",
+            "thick"
+          ],
+          "required": true
+        }
+      }
+    }
+  },
+  "type": "object",
+  "properties": {
+
+    "animation-iteration-count": {
+
+      "type": "string",
+      "enum": ["1", "infinite"],
+      "required": true
+
+    },
+    "animation-name": {
+      "type": "string"
+    },
+    "animation-timing-function": {
+      "type": "string",
+      "enum": ["ease",
+        "step-start",
+        "step-end",
+        "linear",
+        "ease-out",
+        "ease-in-out",
+        "ease-in"
+      ],
+
+      "required": true
+
+
+    },
+
+    "border-collapse": {
+      "type": "string",
+      "enum": [
+        "separate",
+        "collapse"
+      ]
+    },
+    "border-image-repeat": {
+      "type": "string",
+      "enum": [
+        "stretch",
+        "space",
+        "round",
+        "repeat"
+      ]
+    },
+    "border-radius": {
+      "$ref": "#/definitions/length"
+    },
+    "border-style": {
+      "$ref": "#/definitions/border"
+    },
+    "border-top-style": {
+      "$ref": "#/definitions/border"
+    },
+    "border-right-style": {
+      "$ref": "#/definitions/border"
+    },
+    "border-bottom-style": {
+      "$ref": "#/definitions/border"
+    },
+    "border-left-style": {
+      "$ref": "#/definitions/border"
+    },
+    "border-width": {
+      "$ref": "#/definitions/border-width"
+    },
+    "border-top-width": {
+      "$ref": "#/definitions/border-width"
+    },
+    "border-right-width": {
+      "$ref": "#/definitions/border-width"
+    },
+    "border-bottom-width": {
+      "$ref": "#/definitions/border-width"
+    },
+
+    "border-left-width": {
+      "$ref": "#/definitions/border-width"
+    },
+    "color": {
+      "type": "string",
+      "format": "color"
+    },
+
+    "background-image": {
+
+    },
+    "background-position": {
+
+    },
+    "background-size": {
+
+    },
+
+    "border-color": {
+      "type": "string",
+      "format": "color"
+
+    },
+    "top": {
+
+    },
+    "border-top": {
+
+    },
+    "border-top-color": {
+
+    },
+    "right": {
+
+    },
+    "border-right": {
+
+    },
+    "border-right-color": {
+
+    },
+    "bottom": {
+
+    },
+    "border-bottom": {
+
+    },
+    "border-bottom-color": {
+
+    },
+    "left": {
+
+    },
+    "border-left": {
+
+    },
+    "border-left-color": {
+
+    },
+
+    "border-top-left-radius": {
+
+    },
+    "border-top-right-radius": {
+
+    },
+    "border-bottom-left-radius": {
+
+    },
+    "border-bottom-right-radius": {
+
+    },
+    "border-image": {
+
+    },
+    "border-image-source": {
+
+    },
+    "border-image-slice": {
+
+    },
+    "width": {
+
+    },
+    "border-image-width": {
+
+    },
+    "border-image-outset": {
+
+    },
+    "border-spacing": {
+
+    },
+
+    "clip": {
+
+    },
+    "column-width": {
+      "$ref": "#/definitions/length"
+    },
+    "column-count": {
+
+    },
+    "column-gap": {
+
+    },
+    "column-rule": {
+
+    },
+    "column-rule-color": {
+
+    },
+    "column-rule-width": {
+      "$ref": "#/definitions/border-width"
+    },
+    "columns": {
+
+    },
+    "content": {
+
+    },
+    "counter-increment": {
+
+    },
+    "counter-reset": {
+
+    },
+    "cursor": {
+      "type": "string",
+      "enum": [
+
+        "auto",
+        "zoom-out",
+        "zoom-in",
+        "wait",
+        "w-resize",
+        "vertical-text",
+        "url()",
+        "text",
+        "sw-resize",
+        "se-resize",
+        "s-resize",
+        "row-resize",
+        "progress",
+        "pointer",
+        "nwse-resize",
+        "nw-resize",
+        "ns-resize",
+        "not-allowed",
+        "none",
+        "no-drop",
+        "nesw-resize",
+        "ne-resize",
+        "n-resize",
+        "move",
+        "help",
+        "ew-resize",
+        "e-resize",
+        "default",
+        "crosshair",
+        "copy",
+        "context-menu",
+        "col-resize",
+        "cell",
+        "all-scroll",
+        "alias"
+      ]
+
+    },
+
+    "flex-flow": {
+
+    },
+    "flex-grow": {
+
+    },
+    "flex-shrink": {
+
+    },
+    "flex-basis": {
+
+    },
+    "order": {
+
+    },
+    "font": {
+
+    },
+    "font-family": {
+
+    },
+    "font-size": {
+      "type": "string",
+      "enum": [
+        "medium",
+        "xx-small",
+        "xx-large",
+        "x-small",
+        "x-large",
+        "smaller",
+        "small",
+        "larger",
+        "large"
+      ],
+      "required": true
+
+    },
+    "font-size-adjust": {
+
+    },
+
+    "height": {
+
+    },
+    "icon": {
+
+    },
+    "image-orientation": {
+
+    },
+    "letter-spacing": {
+
+    },
+    "line-height": {
+
+    },
+    "list-style": {
+
+    },
+    "list-style-image": {
+
+    },
+
+    "max-height": {
+
+    },
+    "max-width": {
+
+    },
+    "min-height": {
+
+    },
+    "min-width": {
+
+    },
+    "object-position": {
+
+    },
+    "opacity": {
+
+    },
+    "orphans": {
+
+    },
+
+    "outline-color": {
+
+    },
+    "outline-offset": {
+
+    },
+    "outline-width": {
+
+    },
+    "padding-top": {
+
+    },
+    "padding-bottom": {
+
+    },
+    "padding-left": {
+
+    },
+    "padding-right": {
+
+    },
+    "perspective": {
+
+    },
+    "perspective-origin": {
+
+    },
+    "quotes": {
+
+    },
+    "tab-size": {
+
+    },
+    "text-align": {
+
+    },
+
+    "text-emphasis-style": {
+      "type": "string",
+      "enum": [
+        "none",
+        "triangle",
+        "sesame",
+        "open",
+        "filled",
+        "double-circle",
+        "dot",
+        "circle"
+      ],
+      "required": true
+
+    },
+    "text-emphasis-color": {
+
+    },
+    "text-indent": {
+
+    },
+    "text-combine-horizontal": {
+
+    },
+    "text-overflow": {
+      "type": "string",
+      "enum": [
+        "clip",
+        "ellipsis"
+      ],
+      "required": true
+
+    },
+    "transform": {
+
+    },
+    "transform-origin": {
+
+    },
+    "text-shadow": {
+
+    },
+
+    "transition-property": {
+
+    },
+    "transition-timing-function": {
+
+    },
+    "transition-duration": {
+      "$ref": "#/definitions/time"
+    },
+    "vertical-align": {
+      "type": "string",
+      "enum": [
+        "baseline",
+        "top",
+        "text-top",
+        "text-bottom",
+        "super",
+        "sub",
+        "middle",
+        "bottom"
+      ],
+      "required": true
+
+    },
+    "widows": {
+
+    },
+    "word-spacing": {
+
+    },
+    "z-index": {
+
+    }
+
+  }
+}
