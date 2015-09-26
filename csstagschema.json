@@ -37,6 +37,18 @@
         }
       }
     },
+    "btrr": {
+      "oneOf": [{
+        "title": "radius",
+        "$ref": "#/definitions/length"
+      }, {
+        "type": "string",
+        "enum": [
+          "0"
+        ],
+        "required": true
+      }]
+    },
     "border": {
       "type": "object",
       "properties": {
@@ -143,7 +155,6 @@
     "integer": {
       "type": "integer"
     },
-
     "border-radius": {
       "$ref": "#/definitions/length"
     },
@@ -182,10 +193,10 @@
       "format": "color"
     },
     "background-image": {},
-    "background-position": {
+    "background-size": {
       "oneOf": [{
         "type": "string",
-        "title": "background-position",
+        "title": "background-size",
         "enum": [
           "auto",
           "cover",
@@ -193,29 +204,116 @@
         ],
         "required": true
       }]
-
     },
-    "background-size": {},
+    "background-position": {},
     "border-color": {
       "type": "string",
       "format": "color"
     },
-    "top": {},
-    "border-top": {},
-    "border-top-color": {},
-    "right": {},
-    "border-right": {},
-    "border-right-color": {},
-    "bottom": {},
-    "border-bottom": {},
-    "border-bottom-color": {},
-    "left": {},
-    "border-left": {},
-    "border-left-color": {},
-    "border-top-left-radius": {},
-    "border-top-right-radius": {},
-    "border-bottom-left-radius": {},
-    "border-bottom-right-radius": {},
+    "top": {
+      "oneOf": [{
+        "$ref": "#/definitions/length"
+      }, {
+        "type": "string",
+        "enum": [
+          "auto"
+        ],
+        "required": true
+      }]
+    },
+    "border-top-color": {
+      "oneOf": [{
+        "type": "string",
+        "format": "color"
+      }, {
+        "type": "string",
+        "enum": [
+          "transparent"
+        ],
+        "required": true
+      }]
+    },
+    "right": {
+      "oneOf": [{
+        "$ref": "#/definitions/length"
+      }, {
+        "type": "string",
+        "enum": [
+          "auto"
+        ],
+        "required": true
+      }]
+    },
+    "border-right-color": {
+      "oneOf": [{
+        "type": "string",
+        "format": "color"
+      }, {
+        "type": "string",
+        "enum": [
+          "transparent"
+        ],
+        "required": true
+      }]
+    },
+    "bottom": {
+      "oneOf": [{
+        "$ref": "#/definitions/length"
+      }, {
+        "type": "string",
+        "enum": [
+          "auto"
+        ],
+        "required": true
+      }]
+    },
+    "border-bottom-color": {
+      "oneOf": [{
+        "type": "string",
+        "format": "color"
+      }, {
+        "type": "string",
+        "enum": [
+          "transparent"
+        ],
+        "required": true
+      }]
+    },
+    "left": {
+      "oneOf": [{
+        "$ref": "#/definitions/length"
+      }, {
+        "type": "string",
+        "enum": [
+          "auto"
+        ],
+        "required": true
+      }]
+    },
+    "border-left-color": {
+      "oneOf": [{
+        "type": "string",
+        "format": "color"
+      }, {
+        "type": "string",
+        "enum": [
+          "transparent"
+        ],
+        "required": true
+      }]
+    },
+    "border-top-left-radius": {
+      "$ref": "#/definitions/btrr"
+    },
+    "border-top-right-radius": {
+      "$ref": "#/definitions/btrr"
+    },
+    "border-bottom-left-radius": {
+      "$ref": "#/definitions/btrr"
+    },
+    "border-bottom-right-radius": {
+      "$ref": "#/definitions/btrr"
+    },
     "border-image": {},
     "border-image-source": {},
     "border-image-slice": {},
