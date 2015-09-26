@@ -75,49 +75,75 @@
   },
   "type": "object",
   "properties": {
-
     "animation-iteration-count": {
-
-      "type": "string",
-      "enum": ["1", "infinite"],
-      "required": true
-
+      "oneOf": [{
+        "type": "string",
+        "enum": [
+          "1",
+          "infinite"
+        ],
+        "required": true
+      }, {
+        "type": "number"
+      }]
     },
     "animation-name": {
-      "type": "string"
+      "oneOf": [{
+        "type": "string",
+        "enum": [
+          "none"
+        ],
+        "required": true
+      }, {
+        "type": "string",
+        "title": "custom identifier"
+      }]
     },
     "animation-timing-function": {
-      "type": "string",
-      "enum": ["ease",
-        "step-start",
-        "step-end",
-        "linear",
-        "ease-out",
-        "ease-in-out",
-        "ease-in"
-      ],
-
-      "required": true
-
-
+      "oneOf": [{
+        "type": "string",
+        "title": "animation-timing-function",
+        "enum": [
+          "ease",
+          "step-start",
+          "step-end",
+          "linear",
+          "ease-out",
+          "ease-in-out",
+          "ease-in"
+        ],
+        "required": true
+      }, {
+        "type": "object",
+        "title": "cubic-bezier",
+        "properties": {
+          "number1": {
+            "type": "string"
+          },
+          "number2": {
+            "type": "string"
+          },
+          "number3": {
+            "type": "string"
+          },
+          "number4": {
+            "type": "string"
+          }
+        }
+      }, {
+        "type": "string",
+        "title": "steps",
+        "enum": [
+          "start",
+          "end"
+        ],
+        "required": true
+      }]
+    },
+    "integer": {
+      "type": "integer"
     },
 
-    "border-collapse": {
-      "type": "string",
-      "enum": [
-        "separate",
-        "collapse"
-      ]
-    },
-    "border-image-repeat": {
-      "type": "string",
-      "enum": [
-        "stretch",
-        "space",
-        "round",
-        "repeat"
-      ]
-    },
     "border-radius": {
       "$ref": "#/definitions/length"
     },
@@ -148,7 +174,6 @@
     "border-bottom-width": {
       "$ref": "#/definitions/border-width"
     },
-
     "border-left-width": {
       "$ref": "#/definitions/border-width"
     },
@@ -156,130 +181,66 @@
       "type": "string",
       "format": "color"
     },
-
-    "background-image": {
-
-    },
+    "background-image": {},
     "background-position": {
+      "oneOf": [{
+        "type": "string",
+        "title": "background-position",
+        "enum": [
+          "auto",
+          "cover",
+          "contain"
+        ],
+        "required": true
+      }]
 
     },
-    "background-size": {
-
-    },
-
+    "background-size": {},
     "border-color": {
       "type": "string",
       "format": "color"
-
     },
-    "top": {
-
-    },
-    "border-top": {
-
-    },
-    "border-top-color": {
-
-    },
-    "right": {
-
-    },
-    "border-right": {
-
-    },
-    "border-right-color": {
-
-    },
-    "bottom": {
-
-    },
-    "border-bottom": {
-
-    },
-    "border-bottom-color": {
-
-    },
-    "left": {
-
-    },
-    "border-left": {
-
-    },
-    "border-left-color": {
-
-    },
-
-    "border-top-left-radius": {
-
-    },
-    "border-top-right-radius": {
-
-    },
-    "border-bottom-left-radius": {
-
-    },
-    "border-bottom-right-radius": {
-
-    },
-    "border-image": {
-
-    },
-    "border-image-source": {
-
-    },
-    "border-image-slice": {
-
-    },
-    "width": {
-
-    },
-    "border-image-width": {
-
-    },
-    "border-image-outset": {
-
-    },
-    "border-spacing": {
-
-    },
-
-    "clip": {
-
-    },
+    "top": {},
+    "border-top": {},
+    "border-top-color": {},
+    "right": {},
+    "border-right": {},
+    "border-right-color": {},
+    "bottom": {},
+    "border-bottom": {},
+    "border-bottom-color": {},
+    "left": {},
+    "border-left": {},
+    "border-left-color": {},
+    "border-top-left-radius": {},
+    "border-top-right-radius": {},
+    "border-bottom-left-radius": {},
+    "border-bottom-right-radius": {},
+    "border-image": {},
+    "border-image-source": {},
+    "border-image-slice": {},
+    "width": {},
+    "border-image-width": {},
+    "border-image-outset": {},
+    "border-spacing": {},
+    "clip": {},
     "column-width": {
       "$ref": "#/definitions/length"
     },
-    "column-count": {
-
-    },
-    "column-gap": {
-
-    },
-    "column-rule": {
-
-    },
-    "column-rule-color": {
-
-    },
+    "column-count": {},
+    "column-gap": {},
+    "column-rule": {},
+    "column-rule-color": {},
     "column-rule-width": {
       "$ref": "#/definitions/border-width"
     },
-    "columns": {
-
-    },
-    "content": {
-
-    },
-    "counter-increment": {
-
-    },
-    "counter-reset": {
-
-    },
+    "columns": {},
+    "content": {},
+    "counter-increment": {},
+    "counter-reset": {},
     "cursor": {
       "type": "string",
       "enum": [
-
         "auto",
         "zoom-out",
         "zoom-in",
@@ -316,30 +277,14 @@
         "all-scroll",
         "alias"
       ]
-
     },
-
-    "flex-flow": {
-
-    },
-    "flex-grow": {
-
-    },
-    "flex-shrink": {
-
-    },
-    "flex-basis": {
-
-    },
-    "order": {
-
-    },
-    "font": {
-
-    },
-    "font-family": {
-
-    },
+    "flex-flow": {},
+    "flex-grow": {},
+    "flex-shrink": {},
+    "flex-basis": {},
+    "order": {},
+    "font": {},
+    "font-family": {},
     "font-size": {
       "type": "string",
       "enum": [
@@ -354,93 +299,34 @@
         "large"
       ],
       "required": true
-
     },
-    "font-size-adjust": {
-
-    },
-
-    "height": {
-
-    },
-    "icon": {
-
-    },
-    "image-orientation": {
-
-    },
-    "letter-spacing": {
-
-    },
-    "line-height": {
-
-    },
-    "list-style": {
-
-    },
-    "list-style-image": {
-
-    },
-
-    "max-height": {
-
-    },
-    "max-width": {
-
-    },
-    "min-height": {
-
-    },
-    "min-width": {
-
-    },
-    "object-position": {
-
-    },
-    "opacity": {
-
-    },
-    "orphans": {
-
-    },
-
-    "outline-color": {
-
-    },
-    "outline-offset": {
-
-    },
-    "outline-width": {
-
-    },
-    "padding-top": {
-
-    },
-    "padding-bottom": {
-
-    },
-    "padding-left": {
-
-    },
-    "padding-right": {
-
-    },
-    "perspective": {
-
-    },
-    "perspective-origin": {
-
-    },
-    "quotes": {
-
-    },
-    "tab-size": {
-
-    },
-    "text-align": {
-
-    },
-
+    "font-size-adjust": {},
+    "height": {},
+    "icon": {},
+    "image-orientation": {},
+    "letter-spacing": {},
+    "line-height": {},
+    "list-style": {},
+    "list-style-image": {},
+    "max-height": {},
+    "max-width": {},
+    "min-height": {},
+    "min-width": {},
+    "object-position": {},
+    "opacity": {},
+    "orphans": {},
+    "outline-color": {},
+    "outline-offset": {},
+    "outline-width": {},
+    "padding-top": {},
+    "padding-bottom": {},
+    "padding-left": {},
+    "padding-right": {},
+    "perspective": {},
+    "perspective-origin": {},
+    "quotes": {},
+    "tab-size": {},
+    "text-align": {},
     "text-emphasis-style": {
       "type": "string",
       "enum": [
@@ -454,17 +340,10 @@
         "circle"
       ],
       "required": true
-
     },
-    "text-emphasis-color": {
-
-    },
-    "text-indent": {
-
-    },
-    "text-combine-horizontal": {
-
-    },
+    "text-emphasis-color": {},
+    "text-indent": {},
+    "text-combine-horizontal": {},
     "text-overflow": {
       "type": "string",
       "enum": [
@@ -472,24 +351,12 @@
         "ellipsis"
       ],
       "required": true
-
     },
-    "transform": {
-
-    },
-    "transform-origin": {
-
-    },
-    "text-shadow": {
-
-    },
-
-    "transition-property": {
-
-    },
-    "transition-timing-function": {
-
-    },
+    "transform": {},
+    "transform-origin": {},
+    "text-shadow": {},
+    "transition-property": {},
+    "transition-timing-function": {},
     "transition-duration": {
       "$ref": "#/definitions/time"
     },
@@ -506,17 +373,9 @@
         "bottom"
       ],
       "required": true
-
     },
-    "widows": {
-
-    },
-    "word-spacing": {
-
-    },
-    "z-index": {
-
-    }
-
+    "widows": {},
+    "word-spacing": {},
+    "z-index": {}
   }
 }
