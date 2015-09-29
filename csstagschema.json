@@ -961,56 +961,235 @@
         "type": "integer"
       }]
     },
-    "text-align": {},
-    "text-emphasis-style": {
-      "type": "string",
-      "enum": [
-        "none",
-        "triangle",
-        "sesame",
-        "open",
-        "filled",
-        "double-circle",
-        "dot",
-        "circle"
-      ],
-      "required": true
+    "text-align": {
+      "oneOf": [{
+        "title": "text-align",
+        "type": "string",
+        "enum": ["start", "right", "left", "match-parent", "justify", "end", "center"],
+        "required": true
+      }, {
+        "title": "String",
+        "type": "string"
+      }]
     },
-    "text-emphasis-color": {},
-    "text-indent": {},
-    "text-combine-horizontal": {},
-    "text-overflow": {
+    "text-emphasis-style": {
+      "oneOf": [{
+        "type": "string",
+        "enum": [
+          "none",
+          "triangle",
+          "sesame",
+          "open",
+          "filled",
+          "double-circle",
+          "dot",
+          "circle"
+        ],
+        "required": true
+      }, {
+        "title": "String",
+        "type": "string"
+      }]
+    },
+    "text-emphasis-color": {
       "type": "string",
-      "enum": [
-        "clip",
-        "ellipsis"
-      ],
-      "required": true
+      "format": "color"
+    },
+    "text-indent": {},
+    "text-combine-horizontal": {
+      "oneOf": [{
+        "title": "text-combine-horizontal",
+        "type": "string",
+        "enum": ["none", "all"],
+        "required": true
+      }, {
+        "title": "digits",
+        "type": "integer"
+      }]
+    },
+    "text-overflow": {
+      "oneOf": [{
+        "type": "string",
+        "enum": [
+          "clip",
+          "ellipsis"
+        ],
+        "required": true
+      }, {
+        "title": "String",
+        "type": "string"
+      }]
     },
     "transform": {},
-    "transform-origin": {},
-    "text-shadow": {},
-    "transition-property": {},
-    "transition-timing-function": {},
+    "transform-origin": {
+      "oneOf": [{
+        "type": "array",
+        "format": "table",
+        "title": "transform-origin",
+        "uniqueItems": true,
+        "items": {
+          "type": "object",
+          "title": "transform-origin",
+          "properties": {
+
+            "first": {
+              "type": "string",
+              "enum": ["50%", "top", "right", "left", "center", "bottom"],
+              "required": true
+            },
+            "second": {
+              "type": "string",
+              "enum": ["50%"],
+              "required": true
+            }
+          }
+        }
+      }, {
+        "$ref": "#/definitions/length"
+      }]
+    },
+    "text-shadow": {
+      "oneOf": [{
+        "type": "string",
+        "enum": [
+          "none"
+        ],
+        "required": true
+      }, {
+        "type": "array",
+        "format": "table",
+        "title": "text-shadow",
+        "uniqueItems": true,
+        "items": {
+          "type": "object",
+          "title": "text-shadow",
+          "properties": {
+            "length1": {
+              "$ref": "#/definitions/length"
+            },
+            "length2": {
+              "$ref": "#/definitions/length"
+            },
+            "length3": {
+              "$ref": "#/definitions/length"
+            },
+            "length4": {
+              "title": "color",
+              "type": "string",
+              "format": "color"
+            }
+          }
+        }
+      }]
+    },
+    "transition-property": {
+      "oneOf": [{
+        "title": "text-combine-horizontal",
+        "type": "string",
+        "enum": ["none", "all"],
+        "required": true
+      }, {
+        "title": "String",
+        "type": "string"
+      }]
+    },
+    "transition-timing-function": {
+      "oneOf": [{
+        "type": "string",
+        "title": "transition-timing-function",
+        "enum": [
+          "ease",
+          "step-start",
+          "step-end",
+          "linear",
+          "ease-out",
+          "ease-in-out",
+          "ease-in"
+        ],
+        "required": true
+      }, {
+        "type": "object",
+        "title": "cubic-bezier",
+        "properties": {
+          "number1": {
+            "type": "string"
+          },
+          "number2": {
+            "type": "string"
+          },
+          "number3": {
+            "type": "string"
+          },
+          "number4": {
+            "type": "string"
+          }
+        }
+      }, {
+        "type": "string",
+        "title": "steps",
+        "enum": [
+          "start",
+          "end"
+        ],
+        "required": true
+      }]
+    },
     "transition-duration": {
       "$ref": "#/definitions/time"
     },
     "vertical-align": {
-      "type": "string",
-      "enum": [
-        "baseline",
-        "top",
-        "text-top",
-        "text-bottom",
-        "super",
-        "sub",
-        "middle",
-        "bottom"
-      ],
-      "required": true
+      "oneOf": [{
+        "type": "string",
+        "enum": [
+          "baseline",
+          "top",
+          "text-top",
+          "text-bottom",
+          "super",
+          "sub",
+          "middle",
+          "bottom"
+        ],
+        "required": true
+      }, {
+        "title": "Percentage",
+        "type": "string",
+        "enum": ["%"],
+        "required": true
+      }, {
+        "$ref": "#/definitions/length"
+      }]
     },
-    "widows": {},
-    "word-spacing": {},
-    "z-index": {}
+    "widows": {
+      "title": "integer",
+      "type": "integer",
+      "default": "2"
+    },
+    "word-spacing": {
+      "oneOf": [{
+        "title": "word-spacing",
+        "type": "string",
+        "enum": ["normal"],
+        "required": true
+      }, {
+        "$ref": "#/definitions/length"
+      }, {
+        "title": "spacing",
+        "type": "string",
+        "enum": ["%"],
+        "required": true
+      }]
+    },
+    "z-index": {
+      "oneOf": [{
+        "title": "z-index",
+        "type": "string",
+        "enum": ["auto"],
+        "required": true
+      }, {
+        "title": "Integer",
+        "type": "integer"
+      }]
+    }
   }
 }
