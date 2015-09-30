@@ -37,6 +37,15 @@
         }
       }
     },
+    "translation-value": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "integer",
+          "default": "2"
+        }
+      }
+    },
     "btrr": {
       "oneOf": [{
         "title": "radius",
@@ -995,7 +1004,93 @@
       "type": "string",
       "format": "color"
     },
-    "text-indent": {},
+    "text-indent": {
+      "oneOf": [{
+          "title": "text-indent",
+          "type": "string",
+          "enum": ["0"],
+          "required": true
+        }, {
+          "title": "percentage",
+          "type": "string",
+          "enum": ["%"],
+          "required": true
+        }, {
+          "type": "array",
+          "format": "table",
+          "title": "hanging each-line",
+          "uniqueItems": true,
+          "items": {
+            "type": "object",
+            "title": "hanging each-line",
+            "properties": {
+
+              "length": {
+                "$ref": "#/definitions/length"
+              },
+              "hanging": {
+                "type": "string",
+                "enum": ["hanging"],
+                "required": true
+              },
+              "each-line": {
+                "type": "string",
+                "enum": ["each-line"],
+                "required": true
+              }
+            }
+          }
+        }, {
+          "type": "array",
+          "format": "table",
+          "title": "hanging",
+          "uniqueItems": true,
+          "items": {
+            "type": "object",
+            "title": "hanging",
+            "properties": {
+
+              "length": {
+                "$ref": "#/definitions/length"
+              },
+              "hanging": {
+                "type": "string",
+                "enum": ["hanging"],
+                "required": true
+              }
+            }
+          }
+        }, {
+          "type": "array",
+          "format": "table",
+          "title": "each-line",
+          "uniqueItems": true,
+          "items": {
+            "type": "object",
+            "title": "each-line",
+            "properties": {
+
+              "length": {
+                "$ref": "#/definitions/length"
+              },
+              "each-line": {
+                "type": "string",
+                "enum": ["each-line"],
+                "required": true
+              }
+
+            }
+          }
+        }, {
+          "title": "length",
+          "$ref": "#/definitions/length"
+        }
+
+
+
+      ]
+
+    },
     "text-combine-horizontal": {
       "oneOf": [{
         "title": "text-combine-horizontal",
@@ -1020,7 +1115,252 @@
         "type": "string"
       }]
     },
-    "transform": {},
+    "transform": {
+      "oneOf": [{
+        "title": "String",
+        "type": "string",
+        "enum": [
+          "none"
+        ],
+        "required": true
+      }, {
+        "title": "translateZ",
+        "$ref": "#/definitions/length"
+      }, {
+        "title": "translateY",
+        "$ref": "#/definitions/translation-value"
+      }, {
+        "title": "translateX",
+        "$ref": "#/definitions/translation-value"
+      }, {
+        "type": "array",
+        "format": "table",
+        "title": "translate3d",
+        "uniqueItems": true,
+        "items": {
+          "type": "object",
+          "title": "translate3d",
+          "properties": {
+            "translation-value1": {
+              "$ref": "#/definitions/translation-value"
+            },
+            "translation-value2": {
+              "$ref": "#/definitions/translation-value"
+            },
+            "length": {
+              "$ref": "#/definitions/length"
+            }
+          }
+        }
+      }, {
+        "type": "array",
+        "format": "table",
+        "title": "translate",
+        "uniqueItems": true,
+        "items": {
+          "type": "object",
+          "title": "translate",
+          "properties": {
+            "translation-value1": {
+              "$ref": "#/definitions/translation-value"
+            },
+            "translation-value2": {
+              "$ref": "#/definitions/translation-value"
+            }
+          }
+        }
+      }, {
+        "title": "skewY",
+        "type": "string",
+        "enum": [
+          "deg",
+          "grad",
+          "rad",
+          "turn"
+        ],
+        "required": true
+      }, {
+        "title": "skewX",
+        "type": "string",
+        "enum": [
+          "deg",
+          "grad",
+          "rad",
+          "turn"
+        ],
+        "required": true
+      }, {
+        "title": "scaleZ",
+        "type": "integer"
+      }, {
+        "title": "scaleY",
+        "type": "integer"
+      }, {
+        "title": "scaleX",
+        "type": "integer"
+      }, {
+        "title": "rotateZ",
+        "type": "string",
+        "enum": [
+          "deg",
+          "grad",
+          "rad",
+          "turn"
+        ],
+        "required": true
+      }, {
+        "title": "rotateY",
+        "type": "string",
+        "enum": [
+          "deg",
+          "grad",
+          "rad",
+          "turn"
+        ],
+        "required": true
+      }, {
+        "title": "rotateX",
+        "type": "string",
+        "enum": [
+          "deg",
+          "grad",
+          "rad",
+          "turn"
+        ],
+        "required": true
+      }, {
+        "title": "rotate",
+        "type": "string",
+        "enum": [
+          "deg",
+          "grad",
+          "rad",
+          "turn"
+        ],
+        "required": true
+      }, {
+        "type": "array",
+        "format": "table",
+        "title": "rotate3d",
+        "uniqueItems": true,
+        "items": {
+          "type": "object",
+          "title": "rotate3d",
+          "properties": {
+            "number1": {
+              "type": "integer"
+            },
+            "number2": {
+              "type": "integer"
+            },
+            "number3": {
+              "type": "integer"
+            },
+            "angle": {
+              "type": "string",
+              "enum": [
+                "deg",
+                "grad",
+                "rad",
+                "turn"
+              ],
+              "required": true
+            }
+          }
+        }
+      }, {
+        "title": "perspective",
+        "$ref": "#/definitions/length"
+      }, {
+        "type": "array",
+        "format": "table",
+        "title": "matrix3d",
+        "uniqueItems": true,
+        "items": {
+          "type": "object",
+          "title": "matrix3d",
+          "properties": {
+            "number1": {
+              "type": "integer"
+            },
+            "number2": {
+              "type": "integer"
+            },
+            "number3": {
+              "type": "integer"
+            },
+            "number4": {
+              "type": "integer"
+            },
+            "number5": {
+              "type": "integer"
+            },
+            "number6": {
+              "type": "integer"
+            },
+            "number7": {
+              "type": "integer"
+            },
+            "number8": {
+              "type": "integer"
+            },
+            "number9": {
+              "type": "integer"
+            },
+            "number10": {
+              "type": "integer"
+            },
+            "number11": {
+              "type": "integer"
+            },
+            "number12": {
+              "type": "integer"
+            },
+            "number13": {
+              "type": "integer"
+            },
+            "number14": {
+              "type": "integer"
+            },
+            "number15": {
+              "type": "integer"
+            },
+            "number16": {
+              "type": "integer"
+            }
+          }
+        }
+      }, {
+        "type": "array",
+        "format": "table",
+        "title": "matrix",
+        "uniqueItems": true,
+        "items": {
+          "type": "object",
+          "title": "matrix",
+          "properties": {
+            "number1": {
+              "type": "integer"
+            },
+            "number2": {
+              "type": "integer"
+            },
+            "number3": {
+              "type": "integer"
+            },
+            "number4": {
+              "type": "integer"
+            },
+            "number5": {
+              "type": "integer"
+            },
+            "number6": {
+              "type": "integer"
+            }
+          }
+        }
+      }]
+    },
     "transform-origin": {
       "oneOf": [{
         "type": "array",
